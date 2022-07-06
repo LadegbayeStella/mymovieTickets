@@ -9,71 +9,129 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/jquery-3.6.0.js"></script>
   <script src="./js/script.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
   <title>Document</title>
 </head>
 
 <body>
   <!-- my nav bar -->
-  <nav class="navbar navbar-expand-lg navbar-secondary bg-dark">
+  <header>
+    <ul class="nav nav-pills bg-dark justify-content-end">
+      <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="" class="nav-link">Gallery</a></li>
+      <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+      <li class="nav-item"><a href="" class="nav-link">Our Service</a></li>
+      <li class="nav-item"><a href="" class="nav-link">Reg Form</a></li>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#">contact us</a>
-        </li>
-      </ul>
+    </ul>
+    <label for=""><img src="./img/超级截屏_20220607_095348.png" alt=""></label>
 
+
+  </header>
+
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/free.jfif" class="d-block " alt="..." width="100%" height="20%">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/unnamed.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/diamond.jfif" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/sonic.jfif" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/marvel.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </nav>
-  
-
-  <h1 class="jumbotron">Movie Ticket Pricing</h1>
-
-  <!-- my form -->
-  <div class="container">
-    <form id="movie">
-      <div class="form-group  stella">
-        <label for="">Movie title:</label>
-        <select class="form-control" id="movie-title">
-          <option disabled selected value> -- select a movie -- </option>
-          <option>Suicide Squad</option>
-          <option>Star Trek</option>
-          <option>Ghostbusters</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="">Show time:</label>
-        <select class="form-control" id="show-time">
-          <option disabled selected value> -- select a movie -- </option>
-          <option>Morning Matinee</option>
-                  <option>Afternoon Matinee</option>
-                  <option>Evening</option>
-        </select>
-      </div>
-      <div class="form-group ">
-        <label for="age-range">Movie title:</label>
-        <select class="form-control" id="age-range">
-          <option disabled selected value> -- select an age -- </option>
-          <option>Child</option>
-          <option>Adult</option>
-          <option>Senior</option>
-        </select>
-      </div>
-
-    </form>
-    <button type="submit" class="btn btn-primary">Get ticket price!</button>
-
+    <button type="submit" class="btn btn-danger ste">Get Tickets</button>
   </div>
-<!-- my output -->
+  <h1 class="acedu">MOVIE@ACEDU</h1> <br>
+  <a class="span">NowPlaying</a> <span>Upcoming Movie</span>
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6" myimg>
+        <div class="mytext">
+          <h2>MRS.ALAKADA IN LAGOS</h2>
+          <h5>Academy Award® nominee Lesley Manville stars as a British housekeeper who travels to France in search of
+            her
+            dream purchase: a Christine Dior gown. Based on the beloved novel by Paul Gallico.</h5>
+          <button type="menue" class="btn btn-danger mybt">Advanced Tickets</button>
+          <img src="./img/pop.jpg" alt="" id="mylargeimg"><br><br><br>
+
+          <div class="mytext">
+            <h2>Mystery Offer for Teens</h2>
+            <h5>MINIONS: THE RISE OF GRU Fan Merch
+              It's time for the summer of the supervillain. Check out collectibles from our online MINIONS: THE RISE OF
+              GRU
+              shop—get your plush toys, posters and more!
+          </div>
+          <img src="./img/film-korea-2020-12_169.jpeg" alt="" id="mymediumImg">
+
+          <div class="tester">
+            <h2>So Good Its Scary</h2>
+            <h5> Polygon calls Shudder a “horror movie paradise” and RogerEbert.com named Shudder “the best home for
+              horror.” Get
+              a
+              free month of the streaming service with the best selection of horror, thriller and supernatural films and
+              series
+              from new premieres to timeless classics, with code: SHUDDERPHONE
+            </h5><br>
+          </div>
+        </div>
+      </div>
+    </div><br>
+
+    <div class="col-6">
+      <img src="./img/Dowload-Fate-of-Alakada-by-Toyin-Abraham-Full-Movie-MP4.webp" alt=""><br><br>
+      <div class="mytex">
+        <h2>AMC The Best in Cinema</h2>
+        <h5>
+          AMC Thrills & Chills brings you the very best in <br> horror and suspense <br> Check out our Staff's <br>
+          Picks of the
+          best new horror movies <br> that will terrify you in 2022. <br>Picks of the
+          best new horror movies <br> that will terrify you in 2022</h5><br> <br> <br>
+      </div><br><br>
+      <img src="./img/big screen.jfif" alt="" class="mysecond"><br>
+
+      <div class="mytest">
+        <h2>Mystery Offer for Action</h2>
+        <h5>MINIONS: THE RISE OF GRU Fan Merch <br>
+          It's time for the summer <br> of the supervillain. <br> Check out collectibles from our online MINIONS: <br>
+          THE RISE OF
+          GRU
+          shop—get your plush toys, posters and more!
+        </h5><br><br><br><br>
+      </div>
 
 
+      <img src="./img/doctor.jfif" alt="" width="500px">
+      <a class="anchor"> see more option > </a>
+
+      <hr>
+    </div>
+    <footer id="myfooter">
+      <hr>
+  
+    </footer>
+  </div>
 </body>
 
 </html>

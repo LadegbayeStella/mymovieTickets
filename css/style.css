@@ -9,7 +9,6 @@
 
 }
 .container{
-  background-image: url(../img/giphy\ \(2\).gif);
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 40px;
@@ -30,7 +29,75 @@ width: 300px;
   font-weight: bolder;
 } 
 body{
-  background-color: blue;
+  background-color: black;
 }
 .form-control select{
   text-align: center;}
+button{
+  margin-bottom: 100px;
+  padding-top: 100px;
+  border-radius: 95px;
+}
+.acedu{
+  font-weight: bolder;
+  color: whitesmoke;
+  margin-top: 30px;
+
+}
+.span{
+  float: right;
+  list-style: linear-gradient(red,blue      );
+  cursor: pointer;
+  text-decoration: underline;
+  color: whitesmoke;
+}
+span{
+  color: whitesmoke;
+  float: 34px;
+}
+a:hover{
+  color: blue;
+}
+.img img{
+  width: 50%;
+}
+.mytext{
+  color: whitesmoke;
+  
+}
+h5{
+  font-size: 15px;
+
+}
+.mybt{
+  color: whitesmoke;
+  border-radius: 45px;
+}
+#mylargeimg{
+  width: 500px;
+}
+h2{
+  color: whitesmoke;
+}
+.mytex{
+  float: right;
+  margin-top: 34px;
+  color: whitesmoke;
+}
+
+#mymediumImg{
+  width: 450px;
+}
+.mytest{
+  float: right;
+  margin-top: 34px;
+  color: whitesmoke;
+}
+.anchor{
+  font-size: 30px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.myfooter{
+  background-color: grey;
+}
