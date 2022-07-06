@@ -1,0 +1,36 @@
+.jumbotron{
+  border: black;
+  text-align: center;
+  margin-top: 40px;
+  box-shadow: blue;
+  border-radius: 25%;
+  background-color: lightblue;
+  color: blue;
+
+}
+.container{
+  background-image: url(../img/giphy\ \(2\).gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+}
+.form-group{
+width: 300px;
+}
+
+ .container form div label{
+  color: whitesmoke;
+  font-size: 27px;
+  text-align: center;
+  font-weight: bolder;
+} 
+body{
+  background-color: blue;
+}
+.form-control select{
+  text-align: center;}
