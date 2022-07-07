@@ -29,7 +29,8 @@ width: 300px;
   font-weight: bolder;
 } 
 body{
-  background-color: black;
+background:linear-gradient(45deg, black 50%,rgb(68, 32, 32) 50%);
+
 }
 .form-control select{
   text-align: center;}
@@ -100,4 +101,12 @@ h2{
 }
 .myfooter{
   background-color: grey;
+}
+#mygallery{
+width: 300px;
+height: 370px;
+}
+#mybody{
+  background:linear-gradient(45deg, black 50%,rgb(56, 51, 51) 50%);
+
 }
