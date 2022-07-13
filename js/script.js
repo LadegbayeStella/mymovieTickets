@@ -36,3 +36,4 @@ addmovie
 Tickets.prototype.getPrice =function(customer){
   let price = this.movies[customer.movie]
 }
+
