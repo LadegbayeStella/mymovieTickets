@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="jumbotron">Movie Ticket Pricing</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <form id="movie-ticket">
+          <div class="form-group"><br>
+            <label for="movie-title">Movie title:</label>
+            <select class="form-control" id="movie-title">
+              <option disabled selected value> -- select a movie -- </option>
+              <option>Suicide Squad</option>
+              <option>Star Trek</option>
+              <option>Ghostbusters</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="movie-time">Show time:</label>
+            <select class="form-control" id="movie-time">
+              <option disabled selected value> -- select a show time -- </option>
+              <option>Morning Matinee</option>
+              <option>Afternoon Matinee</option>
+              <option>Evening</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age-range">Movie title:</label>
+            <select class="form-control" id="age-range">
+              <option disabled selected value> -- select an age -- </option>
+              <option>Child</option>
+              <option>Adult</option>
+              <option>Senior</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-dark mybutton">Get ticket price!</button>
+        </form>
+
+      </div>
+    </div>
+    <div class="output">
+      <h2>Your ticket information:</h2>
+      <p> Your <span id="showTime"></span> showtime for <span id="showTitle"></span> will be $<span
+          id="showPrice"></span>.</p>
+    </div>
+  </div>
+</body>
+
+</html>
