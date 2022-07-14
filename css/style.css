@@ -128,3 +128,8 @@ h2{
   font-family: fraunces, sans-serif;
   color: var(--Dark_grayish_blue);
 }
+#ticket-total{
+color: whitesmoke;
+display: none;
+background-color:black;
+}
