@@ -27,5 +27,5 @@ Movies.prototype.assignId =function(){
 // method to add customer
 Movies.prototype.addMovies = function () {
 Movies.id = this.assignId();
-this.Movies[customers.id] = customers;
+this.Movies[Movies.id] =Movies;
 }
