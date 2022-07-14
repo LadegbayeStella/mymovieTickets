@@ -121,3 +121,10 @@ a{
   margin-top: 50px;
   float: right;
 }
+/* body{
+  background: var(--Red);
+} */
+h2{
+  font-family: fraunces, sans-serif;
+  color: var(--Dark_grayish_blue);
+}
