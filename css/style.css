@@ -20,7 +20,7 @@
 }
 /* my header */
 header{
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   right: 0;
@@ -46,8 +46,11 @@ header{
   list-style: none;
   position: relative;
 }
-@media screen {
-  
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
 }
 .navbar a{
   font-size: 20px;
@@ -63,12 +66,13 @@ left: 0;
 transition: 0.4s all linear;
 }
 .btn{
-  padding: 9px 14px;
+  padding: 9px 20px;
   background: #c20114;
   color: aliceblue;
   font-weight: 400;
   border-radius: 10px;
   margin-left: 156px;
+  margin-bottom: 20px;
 }
 .btn:hover{
 
@@ -87,6 +91,8 @@ transition: 0.4s all linear;
 }
 
 body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
   background: linear-gradient(45deg, black 50%, rgb(68, 32, 32) 50%);
 }
 
@@ -300,7 +306,7 @@ button:hover {
   width: 1366px;
   height: 500px;
   margin: 0 auto;
-  /* margin-top: 600px; */
+  margin: 10px;
 }
 
 .footer {
@@ -366,45 +372,6 @@ button:hover {
   margin-left: 0px;
   transition: 0.8s
 }
-
-/* .contact .nav {
-  list-style: none;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  float: left;
-} */
-
-/* .nav .nav-link {
-  width: 10%;
-  margin-top: 20px;
-  display: block;
-  float: left;
-  top: 120px;
-} */
-
-/* .nav .nav-link a {
-  text-decoration: none;
-  font-size: 18px;
-  font-family: sans-serif;
-  text-align: center;
-  font-weight: 200;
-  letter-spacing: 2px;
-  transition: 0.8s
-} */
-
-.nav-link a:hover::after {
-  display: block;
-  width: 50%;
-  height: 2px;
-  background-color: ghostwhite;
-  content: "";
-  margin-top: -2px;
-  margin-left: 0px;
-  transition: 0.8s
-} 
-
-
 .address {
   height: 100%;
   width: 25%;
@@ -469,4 +436,10 @@ padding-left: 500px;
   font-size: 25px;
   text-transform: uppercase;
   border-bottom: 1px solid red;
+  margin-bottom: 300px;
+}
+/* my img container */
+#myContainer.row .col-md-4 img:hover{
+background-clip: border-box;
+  
 }
