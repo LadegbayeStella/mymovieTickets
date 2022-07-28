@@ -224,9 +224,6 @@ a {
   float: right;
 }
 
-/* body{
-  background: var(--Red);
-} */
 h2 {
   font-family: fraunces, sans-serif;
   color: var(--Dark_grayish_blue);
@@ -443,3 +440,10 @@ padding-left: 500px;
 background-clip: border-box;
   
 }
+
+
+
+
+
+
+
