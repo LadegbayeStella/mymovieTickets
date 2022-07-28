@@ -462,4 +462,11 @@ padding-left: 500px;
 .social-link:nth-child(3n) {
   right: 20px;
 }
-
+.heading{
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  text-transform: uppercase;
+  border-bottom: 1px solid red;
+}
