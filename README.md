@@ -46,9 +46,9 @@ Expect: (ticketPrice(movieTicket)).toEqual(9)
 
 _MIT_
 
-Copyright &copy; 2021 **_Dani Renner_** and **_Mike Pingel_**
+Copyright &copy; 2021 **_ladegbaye stella_** 
 ## Contact Information
 
-### Dani Renner
+### ladegbay stella
 <a href="https://github.com/LadegbayeStella" target="_blank">GitHub</a>
 

@@ -1,0 +1,355 @@
+
+/*jslint browser: true, multivar: true */
+
+if (window.__AudioEyePerformance) {
+    window.__AudioEyePerformance.loaderJsStartTime = performance.now();
+}
+
+
+var aecb = "6d811ca";
+var pscb = '';
+
+function ae_choose(a, b, rate) {
+    if(!rate || !b) {
+        return a;
+    }
+    return rate <= Math.random() ? b : a;
+}
+
+function ae_loadScript(path) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = path;
+    document.body.appendChild(script);
+}
+
+ae_loadScript("https://wsv3cdn.audioeye.com/v2/build/jquery.bundle.6d811ca.js");
+
+var loaderFunction = function (tries) {
+        if (!window.ae_jQuery) {
+        var wait = 100;
+        if (tries > 50) {
+            wait = wait * tries;
+        }
+        setTimeout(function() {
+            loaderFunction(++tries)
+        }, wait);
+        return;
+    }
+
+    window.__AudioEyeLoaderStartTime = new Date().getTime();
+    // Singleton pattern: if the loader has already run, do not overwrite.
+    if (window.AudioEye && window.AudioEye.version !== undefined) {
+        return;
+    }
+
+    // declare define here so that when jquery is imported in startupRoutine.js it will
+    // find this define instead of any global define that a customer might use
+    var define = function(){};
+
+    window.AudioEye = {};
+
+
+    // legacy check for AudioEye DAP scan. Do not continue if true
+    if (navigator.userAgent.indexOf("AudioEye") !== -1) {
+        return;
+    }
+
+
+    var options = {};
+    var protocol = "https:";
+    var device = "desktop";
+    var site_id = null;
+
+
+    
+    var options = {"live-monitoring":{"limit":1,"service":true},"help":{"service":true,"aria-label":{"en":"Help Menu. Press enter or use question mark key to turn on or off."},"tooltip-title":{"en":"Help"},"tooltip-keycommand":{"en":"(press ?)"}},"admin":{"service":true,"aria-label":{"en":"AudioEye portal"},"at-message":{"en":"AudioEye portal login"},"cancel":{"en":"Cancel"},"popup_content_opening":{"en":"Opening the Admin Panel requires the page to reload"},"popup_content_closing":{"en":"Closing the Admin Panel requires the page to reload"},"popup_title":{"en":"Confirm reload"},"reload":{"en":"Reload"},"tooltip-title":{"en":"Admin Panel"}},"rotor":{"service":true,"aria-label":{"en":"Page Elements Menu. Press enter or use d key to turn on or off."},"tooltip-title":{"en":"Page Elements Menu"},"tooltip-keycommand":{"en":"(press D)"},"skipto_rotor-link":false},"helpers":{"service":true},"toolbar":{"service":true,"color":{"background":"#252930","foreground":"#96a0ab"},"theme":"light","at-message":{"en":"AudioEye Toolbar. Explore the tools below or press escape to quit the toolbar."},"aria-label":{"en":"AudioEye Toolbar. Explore the tools below or press escape to quit the toolbar."}},"helpdesk":{"service":true,"at-message":{"en":"The AudioEye Help Desk to report accessibility and usability related issues."},"aria-label":{"en":"AudioEye Help Desk. To report accessibility and usability related issues, press enter or use h key to turn on or off."},"tooltip-title":{"en":"Help Desk"},"tooltip-keycommand":{"en":"(press H)"}},"launcher":{"service":true,"position":"left-lower","cta-color":"#1275B3","pre-opt-in-messaging":{"at-message":{"en":"This website is AudioEye enabled and is being optimized for accessibility. Additionally, free web personalization tools have been provided via the AudioEye Toolbar, which may be enabled from the Accessibility Statement link found on this page."}},"opt-in":false,"at-message":{"en":"This website is AudioEye enabled and is being optimized for accessibility. To open the AudioEye Toolbar, press shift + =. The toolbar contains the following"},"aria-label":{"en":"Accessibility options"},"tooltip-title":{"en":"Explore your accessibility options."},"preview-mode-message":{"en":"AudioEye is in preview mode. Some functionality will be limited."},"preview-mode-modal-close":{"en":"Close"},"preview-mode-modal-title":{"en":"Preview Mode"},"at-messages":{"admin":{"en":"AudioEye portal login"},"voice":{"en":"The Voice (beta) tool to control and interact with this site using your voice."},"player":{"en":"The Player tool to listen to this site read aloud. The Player is not intended as a substitute for your screen reader."},"reader":{"en":"The Reader tool to customize the visual display of this site."},"toolbar":{"en":"AudioEye Toolbar. Explore the tools below or press escape to quit the toolbar."},"helpdesk":{"en":"The AudioEye Help Desk to report accessibility and usability related issues."},"launcher":{"en":"This website is AudioEye enabled and is being optimized for accessibility. To open the AudioEye Toolbar, press shift + =. The toolbar contains the following"},"lite-reader":{"en":"AudioEye Visual Toolkit"}}},"pc_preset":"custom-mode","site-menu":{"service":false,"selectors":{"main-menu":{"label":{"en":""},"link":false,"selector":"","search-algorithm":"default"},"aside-menu":{"label":{"en":""},"link":false,"selector":"","search-algorithm":"default"},"other-menu":{"label":{"en":""},"link":false,"selector":"","search-algorithm":"default"},"footer-menu":{"label":{"en":""},"link":false,"selector":"","search-algorithm":"default"},"utility-menu":{"label":{"en":""},"link":false,"selector":"","search-algorithm":"default"},"additional-menus":[{"label":"","selector":"","link":false,"search-algorithm":"default"}]},"aria-label":{"en":"Site Menu. Press enter or use n key to turn on or off."},"tooltip-title":{"en":"Site Menu"},"tooltip-keycommand":{"en":"(press N)"},"search-algorithms":{"default":"Default"}},"compliance":{"service":true,"auto-remediations":true,"smart-remediations":true,"manual-remediations":true,"live-monitoring-limit":"1","edge-remediations":false,"skip-remediations":"","skipto_main-content-link":false,"tab-triggers-outline":false,"skipto_main-link-text":{"en":"Skip to Main Content"},"aria-landmarks":{"banner":"","search":"","content":"","complementary":"","contentinfo":""},"aria-live":{"polite":"","assertive":"","live":"","alert":""},"new_window_text":{"en":"Opens a New Window."},"accessible-carousel-link-text":{"en":"Accessible Carousel"},"accessible-carousel-link-label":{"en":"Accessible Carousel"},"disabled-carousel-message":{"en":"Original carousel disabled. Use accessible carousel or refresh page to access."}},"lite-reader":{"service":true,"aria-label":{"en":"AudioEye Visual Toolkit"},"at-message":{"en":"AudioEye Visual Toolkit"},"tooltip-title":{"en":"Visual Toolkit"},"tooltip-keycommand":{"en":"(Press T)"}},"certification":{"service":true,"version":"5","versionlist":{"3":"Partner Pro","4":"Pro Commitment Statement","5":"Managed"},"tooltip-title":{"en":"Certification"},"tooltip-keycommand":{"en":"(press B)"},"trusted_title":"","aria-label":{"en":"AudioEye Certification Statement. Press enter or use b key to turn on or off."},"at-message":{"en":"The AudioEye Certification Statement to explain the ongoing web accessibility and usability enhancements for this website."}},"user-settings":{"service":true,"aria-label":{"en":"Settings Menu. Press enter or use s key to turn on or off."},"tooltip-title":{"en":"Settings"},"tooltip-keycommand":{"en":"(press S)"}},"carousels":[{"carousel":"","slides":"","link":false,"click-proxy":false,"next_slide":{"en":"Next Slide"},"prev_slide":{"en":"Previous Slide"},"slide_count":{"en":"Slide {{num}} of {{total}}"}}],"external-links":{"service":true,"interface":{"popup_title":{"en":"Confirm Navigation"},"popup_content2":{"en":"You are navigating away from the <span class=\"notranslate\">[[site-name]]<\/span> website. <span class=\"notranslate\">[[site-name]]<\/span> does not own, operate, or control the link or its content. <span class=\"notranslate\">[[site-name]]<\/span> is not responsible for the content of the external website. Privacy and security policies of the external website may differ from those practiced by <span class=\"notranslate\">[[site-name]]<\/span>."},"popup_content":{"en":"By activating 'Continue' below, you acknowledge the previous statement and will be taken to the external website. If you want to remain on this website, activate 'Cancel'."},"popup_content3":{"en":"By activating 'Continue' below, you will open a new window of AudioEye. If you want to remain on the same page, activate 'Cancel'."},"cancel":{"en":"Cancel"},"continue":{"en":"Continue"}}},"persist-settings":{"service":false,"persist":false},"excludes":"","timers":"","tabsets":{"tabset":"","tabs":"","active-tab":"","content":""},"live-monitoring-limit":"1","content-modifiers-version":"2","ga-account":"","startup_modules":["launcher","compliance"],"languages":{"aliases":{"en":["en"],"zh-cn":["zh"],"sv-se":["sv"],"ru-ru":["ru"],"pt-pt":["pt"],"pl-pl":["pl"],"no-no":["no"],"nl-nl":["nl"],"ko-kr":["ko"],"ja-jp":["jp","ja"],"it-it":["it"],"hu-hu":["hu"],"fr-fr":["fr"],"es":["es"],"el-gr":["el"],"de-de":["de"],"da-dk":["da"],"cs-cz":["cs"],"ca":["ca"],"ar-sa":["ar"]},"supported":{"auto":"Automatic","en":"English","en-gb":"English (UK)","zh-tw":"Chinese (Taiwan)","zh-hk":"Chinese (Hong Kong)","zh-cn":"Chinese (China)","sv-se":"Swedish","ru-ru":"Russian","pt-pt":"Portuguese (Portugal)","pt-br":"Portuguese (Brazil)","pl-pl":"Polish","no-no":"Norwegian","nl-nl":"Dutch","ko-kr":"Korean","ja-jp":"Japanese","it-it":"Italian","hu-hu":"Hungarian","fr-fr":"French (France)","fr-ca":"French (Canada)","fi-fi":"Finnish","es":"Spanish","es-mx":"Spanish (Mexico)","el-gr":"Greek","de-de":"German","da-dk":"Danish","cs-cz":"Czech","ca":"Catalan","ar-sa":"Arabic"},"supported-translated":{"auto":"Automatic","en":"English","zh-tw":"\u7e41\u9ad4\u4e2d\u6587","zh-hk":"\u4e2d\u6587\uff08\u9999\u6e2f\uff09","zh-cn":"\u7b80\u4f53\u4e2d\u6587","sv-se":"Svenska","ru-ru":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","pt-pt":"Portugu\u00eas","pt-br":"Portugu\u00eas","pl-pl":"Polski","no-no":"Norsk","nl-nl":"Nederlands","ko-kr":"\ud55c\uad6d\uc5b4","ja-jp":"\u65e5\u672c\u8a9e","it-it":"Italiano","hu-hu":"Hungarian","fr-fr":"Fran\u00e7ais","fr-ca":"Fran\u00e7ais","fi-fi":"suomi","es-mx":"Espa\u00f1ol","en-gb":"English","el-gr":"\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac","de-de":"Deutsch","da-dk":"Dansk","cs-cz":"\u010cesky","ca":"Catal\u00e0","ar-sa":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629","es":"Spanish"},"primary":"auto","detected":"en"},"iframes":{"searchAndInject":true,"unsafe-sources":["gateway.answerscloud.com","cc.hostedpci.com"],"allowed-origins":[]},"off-limits":null,"toolbar-promo":false},
+        site_id = "c974bbe4-b3a7-435f-b97b-25a9dba5dead",
+        encrypted_site_id = "ul2YpilsJR+dxDKTeHgJXr2MOq9WbSBdmDZwLjPdt8KahpegzuxHKM0MvOUYy2ok";
+        
+    AudioEye.site_id = site_id;
+    AudioEye.encrypted_site_id = encrypted_site_id;
+    AudioEye.site_name = "bluehost.com";
+    AudioEye.base_url = "bluehost.com\/m";
+    AudioEye.analytics_url = ae_choose(
+        "https://analytics.audioeye.com/air/v0/send",
+        "",
+        null    );
+    AudioEye.last_publish = "2022-07-20T00:14:39.850Z";
+
+    // Unit Test Mode
+    options.testmode = (window.audioeye_test_mode) ? window.audioeye_test_mode : false;
+
+    // Make options accessible by other modules
+    AudioEye.productConfig = options;
+
+    AudioEye.cb = aecb;
+    AudioEye.pscb = pscb;
+    AudioEye.device = device;
+    AudioEye.version = "3.0" + (aecb ? "-" + aecb : "");
+    AudioEye.protocol = protocol;
+    AudioEye.client_url = "https:\/\/wsv3cdn.audioeye.com\/v2";
+    AudioEye.cdn_bypass_url = "https:\/\/wsv3cdn.audioeye.com\/v2";
+
+    AudioEye.assets_url = "https:\/\/assets.audioeye.com\/m";
+    AudioEye.gtm_url = "https:\/\/?h=f7650f0de1e888c4ebf2cb3279ec1ff6";
+    AudioEye.voice_url = "https:\/\/vs.audioeye.com\/m";
+    AudioEye.voice_client_entry = "\/scripts\/build\/voice.js\/m";
+    AudioEye.pdfjs_url = "https:\/\/pdfjsdev.audioeye.com\/m";
+    AudioEye.build = "prod\/m";
+    AudioEye.portal_url = "portal.audioeye.com";
+    AudioEye.portal_preview = false;
+    AudioEye.site_version = null;
+    AudioEye.toolbar_version = "2";
+    AudioEye.toolbar_version_provider = "sd";
+    AudioEye.loaderVersion = 2;
+
+
+
+
+
+
+    // many of our modules make use of JSON encoding/decoding. We have detected that Prototype.js mangles certain varType to JSON conversions. Let's get rid of those
+    if(window.Prototype) {
+        delete Object.prototype.toJSON;
+        delete Array.prototype.toJSON;
+        delete String.prototype.toJSON;
+    }
+
+    // create Array.reduce alternative for environments that have overridden the native reduce 
+
+    if (Array.prototype.reduce.toString().indexOf('[native code]') > -1) {
+        Array.prototype.ae_reduce = Array.prototype.reduce;
+    } else {
+        Array.prototype.ae_reduce = function(callback) {
+            'use strict';
+            if (this == null) {
+              throw new TypeError('Array.prototype.reduce called on null or undefined');
+            }
+            if (typeof callback !== 'function') {
+              throw new TypeError(callback + ' is not a function');
+            }
+            var t = Object(this), len = t.length >>> 0, k = 0, value;
+            if (arguments.length == 2) {
+              value = arguments[1];
+            } else {
+              while (k < len && !(k in t)) {
+                k++; 
+              }
+              if (k >= len) {
+                throw new TypeError('Reduce of empty array with no initial value');
+              }
+              value = t[k++];
+            }
+            for (; k < len; k++) {
+              if (k in t) {
+                value = callback(value, t[k], k, t);
+              }
+            }
+            return value;
+          };
+    }
+    Object.defineProperty(Array.prototype, 'ae_reduce', {enumerable: false});
+
+    /* Built Files */
+    /* Serving build => prod */
+
+    /**
+ * This is necessary as legacy support for some helpers and remediations that
+ * depend on 'AudioEye.require()' calls to function.
+ * That the time of writing, this library only needs to support the following
+ * types of calls:
+ *  AudioEye.require('lib/mutations'
+    AudioEye.require(['ae_options']...
+    AudioEye.require('lib/mutations'
+    AudioEye.require(['ae_options']...
+    AudioEye.require(["utilities"], function(util)...
+    AudioEye.require(['utilities'], function(u) {
+ */
+(function () {
+
+  if (!window.AudioEye) {
+    return;
+  }
+
+  var log = function (str) {
+    if (!window.console || !window.console.log) {
+      return;
+    }
+
+    console.log(str);
+  };
+
+  // Stub the AudioEye.require function for old helpers and remediations
+  // @param dependency {array|string}
+  // @param callback {fn} - called if it is passed in
+  // @returns {object} - returns dependency always
+  window.AudioEye.require = function (dependency, callback) {
+
+    try {
+
+      // stub with empty function if no callback passed
+      if (typeof callback !== 'function') {
+        callback = function() {};
+      }
+
+      // Create an object to store depdencies in
+      // These will be referenced later when a call to define defines them
+      if (!AudioEye.require._definedDeps) {
+        AudioEye.require._definedDeps = {};
+      }
+
+      // Create an object to store callback functions in
+      // The callbacks will be called when define defines their requested
+      // dependency.
+      if (!AudioEye.require._definedDeps) {
+        AudioEye.require._callbacks = {};
+      }
+
+      // ensure dep is the string name of the dependency
+      var dep = (Array.isArray(dependency)) ? dependency[0] : dependency;
+
+      // The only known calls to this function look for the following
+      // dependencies: 'ae_options', 'lib/mutations', and 'utilities'. All
+      // other params will be rejected
+      var possible_deps = ['ae_options', 'lib/mutations', 'utilities'];
+      if (possible_deps.indexOf(dep) === -1) {
+        throw new Error('AudioEye.require was called with "' + dep + '", which is not supported.');
+      }
+
+      switch (dep) {
+        case 'ae_options':
+          callback(AudioEye.productConfig);
+          return AudioEye.productConfig;
+
+        case 'lib/mutations':
+        case 'utilities':
+
+          // the requested library is already defined, pass it to the callback
+          // and return it as well.
+          if (AudioEye.require._definedDeps[dep]) {
+            callback(AudioEye.require._definedDeps[dep]);
+            return AudioEye.require._definedDeps[dep];
+          }
+
+          // Set the callback for this dependency. The callback will be
+          // called when the platform defines the requested library.
+          if (!AudioEye.require._callbacks[dep]) {
+            AudioEye.require._callbacks[dep] = [];
+          }
+          AudioEye.require._callbacks.push(callback);
+          return;
+      }
+
+    } catch (e) {
+      log('Unable to satisfy call to AudioEye.require(). See next error for more info.');
+      throw e;
+    }
+  };
+
+  // Either set the factory to an object to be used later, or immediately pass
+  // it to any awaiting callbacks.
+  window.AudioEye.define = function (dep, factory) {
+
+    if (!AudioEye.require._definedDeps) {
+      AudioEye.require._definedDeps = {};
+    }
+
+    AudioEye.require._definedDeps[dep] = factory;
+
+    // nothing has required anything yet
+    if (!AudioEye.require._callbacks) return;
+
+    // nothing has required this lib yet
+    if (Array.isArray(AudioEye.require._callbacks[dep])) {
+
+      // pass the factory to each callback
+      AudioEye.require._callbacks[dep].forEach(function (cb) {
+        cb(factory);
+      });
+
+      // remove the callbacks to prevent duplicate calls
+      AudioEye.require._callbacks[dep] = [];
+    }
+  };
+})();
+            ae_loadScript("https://wsv3cdn.audioeye.com/v2/build/startup.bundle.6d811ca.js");
+        
+
+    // Determine startup routine (pdf or standard)
+    AudioEye.mode = (function () {
+
+        var extension = false;
+        if(!site_id && extension){
+            return 'anonymous'
+        }
+
+        if (AudioEye.portal_preview === true) {
+            return 'pdf';
+        }
+
+        // no accessible_pdf config
+        if (!('pdf-links' in options) || options['pdf-links']['pdf_page'] === "") {
+            return 'standard';
+        }
+
+        // pdf config OFF
+        if (!options['pdf-links']['service']) {
+            return 'standard';
+        }
+
+        var page_url = window.location.href;
+
+        // this page is set as the pdf display page
+        if (page_url.indexOf(options['pdf-links']['pdf_page']) !== -1) {
+            return 'pdf';
+
+        } else {
+            return 'standard';
+
+        }
+    })();
+
+    var loaderRunStartup = function(tries) {
+        if (!AudioEye.runStartup) {
+            var wait = 100;
+            if (tries > 50) {
+                wait = wait * tries;
+            }
+            setTimeout(function() {
+                loaderRunStartup(++tries)
+            }, wait);
+            return;
+        }
+
+        AudioEye.runStartup(AudioEye.mode, {
+            'portal_url': 'portal.audioeye.com',
+            'interface': "<div id=\"ae_app\">\n    \n        <!--\n        Layout, Style or Voice Helpers\n    -->\n    <div id=\"ae_helpers\" class=\"ae-module\" style=\"display: none;\">\n\n    \n    <\/div>\n    \n\n        <!--\n        Compliance\n    -->\n    <div id=\"ae_compliance\" class=\"ae-module\" style=\"display: none;\">\n\n        <!-- For autoSmartRem addNewWindowWarnings div is referenced in an aria-describedby -->\n        <div id=\"audioeye_new_window_message\" style=\"display:none\">Opens in new window<\/div>\n        <div id=\"audioeye_pdf_message\" style=\"display:none\">PDF Download<\/div>\n        <div id=\"audioeye_word_message\" style=\"display:none\">Word Download<\/div>\n        <div id=\"audioeye_excel_message\" style=\"display:none\">Excel Download<\/div>\n        <div id=\"audioeye_powerpoint_message\" style=\"display:none\">PowerPoint Download<\/div>\n        <div id=\"audioeye_document_message\" style=\"display:none\">Document Download<\/div>\n\n        \n                    <script type=\"text\/javascript\">\n\n                    var f = function (ele, api) {\n                      \/\/ NH 05\/22\r\nconsole.log('Working Version');\r\n\r\n\/\/ Link Text Content Does Not Describe Purpose\r\nele.outerFind('.support-section .icon-text').each(function(){\r\n  let context = ' - ' + $ae(this).find('h4').text();\r\n  $ae(this).find('a.cta-button').append(`<span class=\"ae-compliance-indent\" style=\"position: absolute; margin: -1px 0 0 -1px; padding: 0; display: block; width: 1px; height: 1px; font-size: 1px; line-height: 1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; outline: 0;\">${context}<\/span>`);\r\n});\r\nele.outerFind('#the_best_web_ho .column-container').each(function(){\r\n  let context = ' - ' + $ae(this).find('h6').text().trim();\r\n  $ae(this).find('a.cta-button').append(`<span class=\"ae-compliance-indent\" style=\"position: absolute; margin: -1px 0 0 -1px; padding: 0; display: block; width: 1px; height: 1px; font-size: 1px; line-height: 1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; outline: 0;\">${context}<\/span>`);\r\n});\r\nele.outerFind('.icon-group-dv2.two-column .icon-text').each(function(){\r\n  let context = ' - ' + $ae(this).find('h4').text().trim();\r\n  $ae(this).find('a.cta-button').append(`<span class=\"ae-compliance-indent\" style=\"position: absolute; margin: -1px 0 0 -1px; padding: 0; display: block; width: 1px; height: 1px; font-size: 1px; line-height: 1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; outline: 0;\">${context}<\/span>`);\r\n});\r\nele.outerFind('#js_required a').append('<span style=\"display: none;\" class=\"ae-compliance-indent\"> for instructions on enabling JavaScript<\/span>');\r\n\r\n\/\/ Form Field Label is Empty\r\nele.outerFind('.domain-search-container .select-wrapper .tld-dropdown').attr({'aria-labelledby':'ae-domain-type-label', 'id':'ae-domain-type-input'});\r\nele.outerFind('.domain-search-container .select-wrapper').removeAttr('id').append('<label id=\"ae-domain-type-label\" for=\"ae-domain-type-input\" style=\"position: absolute; margin: -1px 0 0 -1px; padding: 0; display: block; width: 1px; height: 1px; font-size: 1px; line-height: 1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; outline: 0;\" >Domain Type<\/label>');\r\nele.outerFind('select#tld').attr('aria-label', 'Domain Type').removeAttr('aria-labelledby');\r\nele.outerFind('input[name=\"domain\"]:not(#domain)').attr('aria-label', 'Enter your existing domain').removeAttr('aria-labelledby');\r\nele.outerFind('#vendor-search-handler').removeAttr('aria-labelledby').attr('aria-label', 'Vendor Search');\r\n\r\n\/\/ Detected a button with no visible text\r\nele.outerFind('div.nav-toggle').attr('aria-label', 'Menu');\r\n\r\n\/\/ Images Inside a Link Must Contain Alt Text if No Other Text is Found\r\nele.outerFind('a.nav-logo-link.logo img').attr('alt', 'BlueHost Logo');\r\n\r\n\/\/ Could Not Find Equivalent for SVG\r\nele.outerFind('svg').attr(api.pres);\r\n\r\n\/\/ Detected an Orphaned Label Element\r\nele.outerFind('select[name=\"time\"]').attr('id', 'time');\r\nele.outerFind('select[name=\"service\"]').attr('id', 'service');\r\n\r\n\/\/ Detected a same-page link with an invalid reference\r\nele.outerFind('a[href=\"#chat\"]').attr('role', 'button');\r\n\r\n\/\/ Image Alt Text suggests a Decorative Image\r\nele.outerFind('img.ywa-10000').attr({'role':'presentation', 'alt':''});\r\n\r\n\/\/ There are multiple level 1 headings\r\nsetTimeout(function(){\r\n  ele.outerFind('h4[aria-level=\"1\"]').attr('aria-level', '2');\r\n}, 500);\r\n\r\n\/\/ Detected a table header that does not reference any table cells\r\nele.outerFind('th.header-row').attr('role', 'columnheader');\r\n\r\n\/\/ Detected unusual colspans and\/or rowspans\r\nsetTimeout(function(){\r\n  ele.outerFind('tr').has('> th.header-row').each(function(){\r\n    $ae(this).find('th[role=\"cell\"]').attr(api.pres);\r\n  });\r\n}, 500);\r\nele.outerFind('th.header-col:not(.header-row)').attr('role', 'rowheader');\r\n\r\n\/\/ Detected a button with no visible text\r\nele.outerFind('#footer > a').attr(api.rmv);\r\nele.outerFind('button[aria-labelledby=\"ot-header-id-C0001\"]').attr('aria-label', 'Required Cookies').removeAttr('aria-labelledby');\r\nele.outerFind('button[aria-labelledby=\"ot-header-id-C0002\"]').attr('aria-label', 'Analytics Cookies').removeAttr('aria-labelledby');\r\nele.outerFind('button[aria-labelledby=\"ot-header-id-C0003\"]').attr('aria-label', 'Functional Cookies').removeAttr('aria-labelledby');\r\nele.outerFind('button[aria-labelledby=\"ot-header-id-C0004\"]').attr('aria-label', 'Advertising Cookies').removeAttr('aria-labelledby');\r\n\r\n\/\/ Improper Use of Blockquote\r\nsetTimeout(function(){\r\n  ele.outerFind('blockquote.error').attr(api.pres);\r\n}, 500);\r\n\r\n\/\/ Image Has No Alt Text\r\nele.outerFind('form[name=\"domainless\"] img').attr({'alt':'', 'role':'presentation'});\r\nele.outerFind('.social_media .brand_logo img').attr({'alt':'', 'role':'presentation'});\r\n\r\n\/\/ Improper Use of List Tags\r\nsetTimeout(function(){\r\n  ele.outerFind('.main_nav > ul.clear').attr(api.pres);\r\n  ele.outerFind('#specs-marketing').attr(api.pres);\r\n}, 500);\r\n\r\n\/\/ There are multiple level 1 headings\r\nsetTimeout(function(){\r\n  ele.outerFind('h2:contains(\"Choose a Free Domain Later\")').removeAttr('aria-level');\r\n}, 500);\r\nele.outerFind('blockquote.error h1').attr(api.pres);\r\nele.outerFind('.title_bar .ttitle').attr({'role':'heading', 'aria-level':'1'});\r\n\r\n\/\/\r\nele.outerFind('.footer_nav li.title h3')\n                    };\n                    f.id = \"32dd7b28-b094-4bbd-b7cc-dcdc8dcdfc77\";\n                    f.title = \"WCAG Scan Imp 1.1\";\n                    f.type = \"javascript\";\n\n                    !function(f){\n                    if (window.AudioEye && window.AudioEye.manualRemediations) {\n                       window.AudioEye.manualRemediations.push(f);\n                    }\n                    }(f);\n                        \/\/# sourceURL=https:\/\/wsv3cdn.audioeye.com\/v2\/helpers-remediations\/WCAG_Scan_Imp_1_1.js\n                    <\/script>\n                    \n        <script type=\"text\/javascript\">\n\n        AudioEye.smartRemediations = [];\nAudioEye.autoSmartRemediations = [{\"id\":\"6a890c72-9a35-4b6a-adbb-725d0357d3d1\",\"type\":\"addDownloadableDocumentWarnings\",\"params\":[],\"smart_remediation_number\":\"4c7e3cbf-66ed-4841-b52f-bd5e251a6605\",\"parent_id\":\"\"},{\"id\":\"d239ba31-0bf8-43da-a080-e659b5fccf6b\",\"type\":\"addFormLabels\",\"params\":[],\"smart_remediation_number\":\"08c15a8b-a16a-42d2-b0e6-fe6b71f91605\",\"parent_id\":\"\"},{\"id\":\"240ee9b2-34d8-4b4c-b183-03b816d7806c\",\"type\":\"addFormRequiredAriaLabel\",\"params\":[],\"smart_remediation_number\":\"03e79b2c-3839-403c-a1f3-1173cf4bd6a1\",\"parent_id\":\"\"},{\"id\":\"dd6af15d-774c-43f2-9634-1111f4c33e20\",\"type\":\"addFrameTitles\",\"params\":[],\"smart_remediation_number\":\"5d35c3a0-71ae-4e4c-b185-f94e2febd865\",\"parent_id\":\"\"},{\"id\":\"8b4ffee9-2b49-47da-a715-d713468b076f\",\"type\":\"addLinkText\",\"params\":[],\"smart_remediation_number\":\"6df321e8-95f1-4771-9e32-4a1f3a819e87\",\"parent_id\":\"\"},{\"id\":\"92160a11-d7c1-47ab-8a93-4ee8e27e966c\",\"type\":\"addNewWindowWarnings\",\"params\":[],\"smart_remediation_number\":\"31757437-141c-4fd6-8e31-03bcb2c28ff8\",\"parent_id\":\"\"},{\"id\":\"b72b0f50-46b4-4dcd-bc27-0b6b636b71aa\",\"type\":\"addSmartAltText\",\"params\":[],\"smart_remediation_number\":\"f2f8d100-d269-4542-bd0b-b97a79c8fdbb\",\"parent_id\":\"\"},{\"id\":\"ae359650-5040-4b9f-95bd-4d25de09bd84\",\"type\":\"altDuplicateOptIn\",\"params\":[],\"smart_remediation_number\":\"2d667d49-bb31-463e-9ad6-d33657842065\",\"parent_id\":\"\"},{\"id\":\"a874ceea-d99d-4823-8387-c168de196213\",\"type\":\"altLong\",\"params\":[],\"smart_remediation_number\":\"b22d8ba0-6849-4650-9120-851932887aa4\",\"parent_id\":\"\"},{\"id\":\"9448db3d-fcbd-4ef7-be42-7905dc420b63\",\"type\":\"altRedundant\",\"params\":[],\"smart_remediation_number\":\"4e028609-700f-4eb5-a015-f853cf3a8dec\",\"parent_id\":\"\"},{\"id\":\"2275ceb4-a2b4-4c20-8700-e0da3d45cecc\",\"type\":\"ariaChildlessMenu\",\"params\":[],\"smart_remediation_number\":\"b627d27b-b327-42a8-934d-259230939975\",\"parent_id\":\"\"},{\"id\":\"534e146a-3087-4c18-b676-04d2028208e8\",\"type\":\"automaticNestedLayoutTable\",\"params\":[],\"smart_remediation_number\":\"65f75048-da2a-48d4-ba3f-832e9aaa4499\",\"parent_id\":\"\"},{\"id\":\"de2da8b9-9575-4af5-a3df-02988c778f0d\",\"type\":\"automaticSingleListItem\",\"params\":[],\"smart_remediation_number\":\"85b4fbe0-f158-418f-a5c9-e5b3c50115bf\",\"parent_id\":\"\"},{\"id\":\"78b7a338-793b-4e4b-9fa5-0ef51d27764d\",\"type\":\"blinkOptIn\",\"params\":[],\"smart_remediation_number\":\"e9b4635a-ebe9-469f-9957-5a4131fa0712\",\"parent_id\":\"\"},{\"id\":\"2031e5cd-b32e-4dd2-83bf-cb1bc528fbfb\",\"type\":\"buttonTextContentNotFoundOptIn\",\"params\":[],\"smart_remediation_number\":\"2f1f7c2f-2087-416a-84e0-83999ccb184a\",\"parent_id\":\"\"},{\"id\":\"44ee4862-8639-4dbf-97ca-12bea23f1185\",\"type\":\"deviceIndependentEvent\",\"params\":[],\"smart_remediation_number\":\"11599b11-c216-4526-8e39-2920fcf705f5\",\"parent_id\":\"\"},{\"id\":\"71b7299a-d7e0-4be2-816a-d244cab73b19\",\"type\":\"fieldsetLegendEmpty\",\"params\":[],\"smart_remediation_number\":\"72c910db-4ff3-40e0-909a-421ab72171c5\",\"parent_id\":\"\"},{\"id\":\"5203cba4-8b07-4a13-b635-f4afb7265c1b\",\"type\":\"firstHeaderLevelNot1or2\",\"params\":[],\"smart_remediation_number\":\"5cf56b60-a7bb-44fd-8fd6-be0a5408143c\",\"parent_id\":\"\"},{\"id\":\"7d74c451-0b06-48d9-b3fb-ad0eacc92fb2\",\"type\":\"formFieldGroupCheckboxGroupNotFoundOptIn\",\"params\":[],\"smart_remediation_number\":\"474d1ff3-d7ca-44c9-ad32-353971406129\",\"parent_id\":\"\"},{\"id\":\"48938759-d63c-4840-be76-1a0e53005022\",\"type\":\"formFieldLabelNotFoundOptIn\",\"params\":[],\"smart_remediation_number\":\"4460e618-92b1-49f5-81f4-c893ce3411fe\",\"parent_id\":\"\"},{\"id\":\"28ceb704-a0e4-4e96-943c-01a30c2e231e\",\"type\":\"formFieldLabelOptIn\",\"params\":[],\"smart_remediation_number\":\"a2c12bd0-2892-4e57-b931-65f7a65833fc\",\"parent_id\":\"\"},{\"id\":\"45a266f9-bedb-40c0-a866-995ea182dded\",\"type\":\"formFieldMetadataBadAnchor\",\"params\":[],\"smart_remediation_number\":\"7fda0e78-4158-41c7-b8a1-d8a4ed1be200\",\"parent_id\":\"\"},{\"id\":\"c355beae-a87f-452a-afd7-62c6c8ee42d3\",\"type\":\"formFieldMetadataNotFoundOptIn\",\"params\":[],\"smart_remediation_number\":\"181ee980-0fe8-4efe-8ff4-2642c20661df\",\"parent_id\":\"\"},{\"id\":\"422034dc-4942-44cd-8c5c-55876c3ec9b9\",\"type\":\"frameTitleDuplicate\",\"params\":[],\"smart_remediation_number\":\"024cd77c-d9a6-4344-8729-5508661c1c47\",\"parent_id\":\"\"},{\"id\":\"72126642-8f5e-4362-a69f-8037437283d9\",\"type\":\"headingEmpty\",\"params\":[],\"smart_remediation_number\":\"bc0362fb-d188-4cb0-8cf0-bb98e2685055\",\"parent_id\":\"\"},{\"id\":\"3b7598fd-b734-4f1d-ad71-3bf9dcb89fbc\",\"type\":\"headingLevelOneCountMultiple\",\"params\":[],\"smart_remediation_number\":\"02817b51-3fe9-42c9-abb8-5dfc10996e27\",\"parent_id\":\"\"},{\"id\":\"9181d3f6-46e2-4326-8fed-74c05861d98d\",\"type\":\"headingLevelOneCountZero\",\"params\":[],\"smart_remediation_number\":\"0ef758f0-8b2a-4f05-9b20-91bfc11c1a93\",\"parent_id\":\"\"},{\"id\":\"8c7567f5-c69b-4cb8-a655-5fb9b9b78afb\",\"type\":\"headingSequenceOutOfOrder\",\"params\":[],\"smart_remediation_number\":\"eda5704b-70ab-4535-aa58-d7d253214d95\",\"parent_id\":\"\"},{\"id\":\"16266435-ff3b-4d08-a023-47330722df73\",\"type\":\"hideEmptyHeaders\",\"params\":[],\"smart_remediation_number\":\"a3ed8f62-42a3-4ae8-8a35-301a1348dd0c\",\"parent_id\":\"\"},{\"id\":\"733d0953-754c-4cad-88d7-69efcae1ab02\",\"type\":\"htmlAccessibleNameMismatchOptIn\",\"params\":[],\"smart_remediation_number\":\"f5cbbddc-6fe8-418b-92dd-9a6dc8e94be2\",\"parent_id\":\"\"},{\"id\":\"8b8fa2d0-5808-498f-a2c8-d2293eb38e78\",\"type\":\"htmlAriaRolesAttributeNotAppropriate\",\"params\":[],\"smart_remediation_number\":\"828fe512-16ee-4fd4-8e1b-e7c465871bd7\",\"parent_id\":\"\"},{\"id\":\"79d2bcc5-78eb-4bb2-be8f-0876608dcffc\",\"type\":\"htmlAriaRolesInvalidRole\",\"params\":[],\"smart_remediation_number\":\"2863a565-4a1e-4142-9467-eadcb8f2280e\",\"parent_id\":\"\"},{\"id\":\"ae211229-d2b1-4a67-b235-490f762ca7b9\",\"type\":\"htmlAriaRolesRoleMissingParent\",\"params\":[],\"smart_remediation_number\":\"60f36c4e-be8f-41bd-a708-3d8125c80d74\",\"parent_id\":\"\"},{\"id\":\"a20171dc-b42b-4387-8a30-2f02505ed60f\",\"type\":\"htmlFocusSequenceAriaHiddenTabbableOptIn\",\"params\":[],\"smart_remediation_number\":\"17f9a3bd-eeeb-454d-a7e5-06e43a76de84\",\"parent_id\":\"\"},{\"id\":\"15b44994-63fb-4045-ac64-df96714e60d8\",\"type\":\"htmlLandmarksMultipleComplementary\",\"params\":[],\"smart_remediation_number\":\"a8f3763a-9d1d-44dd-9260-bd0ec78066e4\",\"parent_id\":\"\"},{\"id\":\"ecf8c597-6228-45bb-a922-f54b3df2ce96\",\"type\":\"htmlLandmarksMultipleMains\",\"params\":[],\"smart_remediation_number\":\"9e6e25f9-1ed2-47d9-adc6-deb6867f0581\",\"parent_id\":\"\"},{\"id\":\"f6103573-3e59-4bef-9d61-999e68f25e70\",\"type\":\"htmlLandmarksMultipleNavsOptIn\",\"params\":[],\"smart_remediation_number\":\"d734ee6a-bae4-4f0f-924d-aade982ee565\",\"parent_id\":\"\"},{\"id\":\"c1bad404-bf6d-4261-8c80-0e51f8819625\",\"type\":\"htmlSkipToMainOptIn\",\"params\":[],\"smart_remediation_number\":\"b3b29786-6e75-4feb-9669-9f846fdb1d4d\",\"parent_id\":\"\"},{\"id\":\"fe47c254-4a38-4f95-b722-53a9d61654b6\",\"type\":\"interactiveElementKeyboardActivation\",\"params\":[],\"smart_remediation_number\":\"fc19e6e8-0191-4125-a05f-a288eddbb22e\",\"parent_id\":\"\"},{\"id\":\"1167754c-d5f7-4b3b-98b6-2734d38587ea\",\"type\":\"labelEmpty\",\"params\":[],\"smart_remediation_number\":\"eb893e86-ccd4-4fe4-a113-c8ce34d85fa3\",\"parent_id\":\"\"},{\"id\":\"da5dd6d1-a0f8-4279-8bd3-70da60fbd06c\",\"type\":\"linkAdjacentSameHREFOptIn\",\"params\":[],\"smart_remediation_number\":\"c7319224-b5c7-4ccb-a27d-dbb3f61cde40\",\"parent_id\":\"\"},{\"id\":\"1240d5de-e6e7-447a-b021-1f682d7a6bc1\",\"type\":\"linkEmptyOptIn\",\"params\":[],\"smart_remediation_number\":\"1995a521-e475-47f8-b17f-2ddef58ce58e\",\"parent_id\":\"\"},{\"id\":\"22485599-33f2-4ef2-b837-46f96ca6cabe\",\"type\":\"linkHrefNoneOptIn\",\"params\":[],\"smart_remediation_number\":\"929bc644-bf3b-4035-a489-f589e9d98c51\",\"parent_id\":\"\"},{\"id\":\"4c2f9c8c-7f1f-4b42-ac78-f2b07b4c4cca\",\"type\":\"linkImgTextAltBlankOptIn\",\"params\":[],\"smart_remediation_number\":\"d7988114-869b-42b1-a24e-d1b311793b67\",\"parent_id\":\"\"},{\"id\":\"af38f976-8e48-4f99-912a-f54372be6392\",\"type\":\"linkImgTextAltNotFoundOptIn\",\"params\":[],\"smart_remediation_number\":\"91697b6a-a7ff-4824-a133-cf8f66c45c41\",\"parent_id\":\"\"},{\"id\":\"3ee795dd-64a6-4f67-a96f-d9e59faf1231\",\"type\":\"linkSamePageAddButtonRoleAndKeydown\",\"params\":[],\"smart_remediation_number\":\"28994ae8-f2da-412c-8255-f679f2b2deab\",\"parent_id\":\"\"},{\"id\":\"85e809a0-7da9-44ad-99b6-9df4d99024e6\",\"type\":\"linkSamePageAnchorInvalidOptIn\",\"params\":[],\"smart_remediation_number\":\"7761117c-7fdb-4128-a0ea-92a740662c47\",\"parent_id\":\"\"},{\"id\":\"ca146253-f829-4dc1-85c8-48ed1f218dc4\",\"type\":\"linkTextContentNotDescriptiveOptIn\",\"params\":[],\"smart_remediation_number\":\"c9544cb3-bf51-4295-8dd0-1d616b6f5f03\",\"parent_id\":\"\"},{\"id\":\"2f6b4905-d705-4206-9c5f-3fc2bc2a687c\",\"type\":\"linkTextContentNotFoundOptIn\",\"params\":[],\"smart_remediation_number\":\"7bdae739-0208-40b9-bac5-c703929bc581\",\"parent_id\":\"\"},{\"id\":\"d73f94a1-ba89-4f8d-a6d6-a77078af737f\",\"type\":\"linkTextContentRedundantOptIn\",\"params\":[],\"smart_remediation_number\":\"885cd804-a03a-461a-b3bc-8b7e3d3a0308\",\"parent_id\":\"\"},{\"id\":\"b5a96309-efc7-49d0-a600-e79b128e86b3\",\"type\":\"makeLinkImgAltDecorative\",\"params\":[],\"smart_remediation_number\":\"36444f5f-eb93-4e62-9b5f-8b821809ecf3\",\"parent_id\":\"\"},{\"id\":\"c5e3255b-d77c-4860-8b2f-3198e17958aa\",\"type\":\"oneItemList\",\"params\":[],\"smart_remediation_number\":\"b4c27040-7da6-4767-a096-08f45d813fc0\",\"parent_id\":\"\"},{\"id\":\"3e443efe-d715-4df8-b429-fb7d37a6a6dd\",\"type\":\"removeInvalidLabelReferences\",\"params\":[],\"smart_remediation_number\":\"c7194312-f434-453c-af7a-de6aa2d884a1\",\"parent_id\":\"\"},{\"id\":\"6c55195b-c6e6-44a1-9abc-dc47df06a732\",\"type\":\"removeLinkRedundancies\",\"params\":[],\"smart_remediation_number\":\"c9ac80d5-d086-47cb-8727-9071cfbfefa3\",\"parent_id\":\"\"},{\"id\":\"23e0387a-44b1-42cf-8b19-6b994a4b6791\",\"type\":\"setDocLang\",\"params\":[],\"smart_remediation_number\":\"00715eab-9f78-48d9-8bc3-eb21004d9629\",\"parent_id\":\"\"},{\"id\":\"740939e1-8833-4f4e-b437-8136fba9a2c1\",\"type\":\"spacerAlt\",\"params\":[],\"smart_remediation_number\":\"f5fc9ce8-8bdd-4381-8d5f-551aad93caf8\",\"parent_id\":\"\"},{\"id\":\"6b3051ef-09f3-45cb-aecb-b6a851ed91b3\",\"type\":\"tabindexGreater\",\"params\":[],\"smart_remediation_number\":\"7daa46c0-1b58-4bef-b234-7b2d73e057cf\",\"parent_id\":\"\"},{\"id\":\"716a59e7-b173-4031-8b1f-e133ba4e700f\",\"type\":\"tableLayout\",\"params\":[],\"smart_remediation_number\":\"6ba74826-1bfc-4f9c-9918-336472db5e7a\",\"parent_id\":\"\"},{\"id\":\"4c2d14b9-7839-481c-8316-1b3a42060688\",\"type\":\"thEmpty\",\"params\":[],\"smart_remediation_number\":\"b3871a4a-4098-4fd5-9890-c8661460d8e3\",\"parent_id\":\"\"},{\"id\":\"5b11cbf8-ab9b-4beb-bc4d-6ad146373d61\",\"type\":\"titleRedundantOptIn\",\"params\":[],\"smart_remediation_number\":\"396cc38c-31fd-48f3-9dfb-082bbc088354\",\"parent_id\":\"\"}];\n\n        <\/script>\n    <\/div>\n    \n    <!--\n        Versioning Control Panel if versioning = true !\n    -->\n        \n    <!--\n        Launcher\n    -->\n    <span id=\"ae_placeholder_launcher\" style=\"display: none;\" aria-hidden=\"true\"><\/span>\n\n    <!-- Toolbar -->\n\n    <span id=\"ae_placeholder_toolbar\" style=\"display: none;\" aria-hidden=\"true\"><\/span>\n\n    <!--\n        Site Menu\n    -->\n    <span id=\"ae_placeholder_site-menu\" style=\"display: none;\" aria-hidden=\"true\"><\/span>\n\n    \n    <!--\n        Generic Aria Live message container\n    -->\n    <div class=\"ae-blurb-noaudio\" id=\"ae_enabled_messages\" aria-relevant=\"additions\" aria-live=\"assertive\"><\/div>\n\n    \n    <!-- Symbol definitions -->\n    <svg style=\"position: absolute; width: 0; height: 0; overflow: hidden;\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\">\n        <defs>\n            <symbol id=\"icon-close-carousel\" viewBox=\"0 0 32 32\">\n                <title>close carousel<\/title>\n                <path fill=\"#ffffff\" style=\"fill: var(--color1, #ffffff)\" d=\"M28.992 0l-12.992 12.992-12.992-12.992-3.008 3.008 12.992 12.992-12.992 12.992 3.008 3.008 12.992-12.992 12.992 12.992 3.008-3.008-12.992-12.992 12.992-12.992-3.008-3.008z\"><\/path>\n            <\/symbol>\n        <\/defs>\n    <\/svg>\n\n<\/div><!-- end #ae_app -->",
+            'container_id': "5719",
+            'site_id': site_id,
+            'version_id': null,
+            'is_working_version_request': false,
+            'live_scanner': false,
+            'live_scanner_open': false,
+            'monitor': false,
+            'live_monitor_endpoint_url': ae_choose(
+                "https://analytics.audioeye.com/air/report",
+                "",
+                null            ),
+
+                        'perf_endpoint_url': '',
+            'loader_timing_endpoint_url': "https:\/\/zalywzdew6.execute-api.us-west-2.amazonaws.com\/prod\/v0\/timing",
+            'product_config': options,
+            'device': device,
+            'testmode': window.AEUnitTests,
+            'site_hash': "f7650f0de1e888c4ebf2cb3279ec1ff6",
+            'toolbar_version': 2        });
+    };
+
+    // Execute startup routine
+    loaderRunStartup(1);
+    
+    window.AudioEye = AudioEye;
+};
+
+loaderFunction(1);

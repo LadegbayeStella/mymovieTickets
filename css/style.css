@@ -1,5 +1,14 @@
 
-.container{
+*{
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  position: relative;
+  color: rgb(222, 24, 192);
+}
+.container {
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 40px;
@@ -9,127 +18,424 @@
   height: 60vh;
   background-size: cover;
 }
-.form-group{
-width: 300px;
+/* my header */
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px;
+  transition: o.5s;
+  z-index: 1000;
+  background: var(--main-color);
+}
+ ul label img{
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: blueviolet;
+
 }
 
- .container form div label{
+.form-group {
+  width: 300px;
+}
+
+.container form div label {
   color: whitesmoke;
   font-size: 27px;
   text-align: center;
   font-weight: bolder;
-} 
-body{
-background:linear-gradient(45deg, black 50%,rgb(68, 32, 32) 50%);
-
 }
-.form-control select{
-  text-align: center;}
-button{
+
+body {
+  background: linear-gradient(45deg, black 50%, rgb(68, 32, 32) 50%);
+}
+
+.form-control select {
+  text-align: center;
+}
+
+button {
   margin-bottom: 100px;
   padding-top: 100px;
   border-radius: 95px;
 }
-.acedu{
+
+.acedu {
   font-weight: bolder;
   color: whitesmoke;
   margin-top: 30px;
 
 }
-.span{
+
+.span {
   float: right;
-  list-style: linear-gradient(red,blue      );
+  list-style: linear-gradient(red, blue);
   cursor: pointer;
   text-decoration: underline;
   color: whitesmoke;
 }
-span{
+
+span {
   color: whitesmoke;
   float: 34px;
 }
-a:hover{
+
+a:hover {
   color: blue;
 }
-.img img{
+
+.img img {
   width: 50%;
 }
-.mytext{
+
+.mytext {
   color: whitesmoke;
-  
+
 }
-h5{
+
+h5 {
   font-size: 15px;
 
 }
-.mybt{
+
+.mybt {
   color: whitesmoke;
   border-radius: 45px;
 }
-#mylargeimg{
+
+#mylargeimg {
   width: 500px;
 }
-h2{
+
+h2 {
   color: whitesmoke;
 }
-.mytex{
+
+.mytex {
   float: right;
   margin-top: 34px;
   color: whitesmoke;
 }
 
-#mymediumImg{
+#mymediumImg {
   width: 450px;
 }
-.mytest{
+
+.mytest {
   float: right;
   margin-top: 34px;
   color: whitesmoke;
 }
-.anchor{
+
+.anchor {
   font-size: 30px;
   color: whitesmoke;
   cursor: pointer;
 }
-.myfooter{
+
+.myfooter {
   background-color: grey;
 }
-#mygallery{
-width: 300px;
-height: 370px;
+
+#mygallery {
+  width: 300px;
+  height: 370px;
 }
-#mybody{
-  background:linear-gradient(45deg, black 50%,rgb(56, 51, 51) 50%);
+
+#mybody {
+  background: linear-gradient(45deg, black 50%, rgb(56, 51, 51) 50%);
 
 }
-a{
+
+a {
   text-decoration: none;
 }
-.output{
+
+.output {
   display: none;
 }
-.mybutton{
+
+.mybutton {
   height: 50px;
   width: 150px;
   margin-top: 30px;
 }
-.jumbotron{
-  background: linear-gradient(lightblue,black);
+
+.jumbotron {
+  background: linear-gradient(lightblue, black);
   height: 70px;
   width: 100%;
+  text-align: center;
+  font-size: 50px;
+  font-display: 30px;
+  position: absolute;
+  position: fixed;
 }
-.form-group{
+
+.form-group {
   margin-top: 50px;
   float: right;
 }
+
 /* body{
   background: var(--Red);
 } */
-h2{
+h2 {
   font-family: fraunces, sans-serif;
   color: var(--Dark_grayish_blue);
 }
-#ticket-total{
-color: whitesmoke;
-display: none;
-background-color:black;
+
+#ticket-total {
+  color: whitesmoke;
+  display: none;
+  background-color: black;
+  margin-top: 200px;
+  margin-left: 350px;
 }
+
+.card {
+  width: 270px;
+  height: 250px;
+  background: rgb(45, 45, 45);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+}
+
+.card :hover {
+  color: ghostwhite;
+  transition-timing-function: ease-out;
+}
+
+.price {
+  width: 70%;
+  margin-top: 0.7em;
+  background-color: whitesmoke;
+  box-shadow: inset 0px 0px 2em black;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.price {
+  text-align: center;
+  color: black;
+  font-size: x-large;
+  font-weight: bold;
+  padding: 0.75em 0 0 0;
+}
+
+.pricedescriptor {
+  text-align: center;
+  color: rgb(118, 118, 118);
+  font-size: 20px;
+  padding: 0 0 1em 0;
+  font-weight: bolder;
+
+
+}
+
+button {
+  margin-top: 1em;
+  padding: 0.5em 0.8em 0.5em 0.8em;
+  border-style: none;
+  border-radius: 1000000px;
+  color: rgb(239, 239, 239);
+  font-weight: bold;
+  background-image: linear-gradient(45deg, black 0%, whitesmoke 100%);
+  /* transition: box-shadow 0.15s ease-in-out; */
+
+}
+
+button:hover {
+  transition: box-shadow 0.15s ease-in-out;
+  transition: width 2s, height 4s;
+  transition-timing-function: ease;
+
+}
+
+
+/* footer */
+.container {
+  width: 1366px;
+  height: 500px;
+  margin: 0 auto;
+  /* margin-top: 600px; */
+}
+
+.footer {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  padding: relative;
+  bottom: 0;
+  left: 0;
+  top: 820;
+  background: linear-gradient(35deg, black 55%,grey 7%);
+  background-color: ghostwhite;
+  box-shadow: #c20114;
+
+
+}
+@keyframes stella {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+.footer{
+  background-color:rgb(165, 42, 122);
+  height:97%;
+  width: 110%;
+  animation-name:stella;
+  animation-duration: 4s;
+  position: absolute;
+}
+
+.contact {
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+.contact-list {
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  float: left;
+  bottom:120px ;
+  left: 50px;
+}
+
+.contact-list .list {
+  width: 75%;
+  left: 0;
+  top: 125px;
+  margin-top: 20px;
+}
+
+.contact-list .list a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;
+  transition: 0.8s;
+}
+
+.list a:hover::after {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color:ghostwhite;
+  content: "";
+  margin-top: -2px;
+  margin-left: 0px;
+  transition: 0.8s
+}
+
+/* .contact .nav {
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  float: left;
+} */
+
+/* .nav .nav-link {
+  width: 10%;
+  margin-top: 20px;
+  display: block;
+  float: left;
+  top: 120px;
+} */
+
+/* .nav .nav-link a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 2px;
+  transition: 0.8s
+} */
+
+.nav-link a:hover::after {
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: ghostwhite;
+  content: "";
+  margin-top: -2px;
+  margin-left: 0px;
+  transition: 0.8s
+} 
+
+
+.address {
+  height: 100%;
+  width: 25%;
+  float: left;
+  text-align: left;
+  left: 50px;
+}
+
+.address p {
+  font-size: 20px;
+  font-family: sans-serif;
+  top: 170px;
+  line-height: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: black;
+  float:right;
+padding-left: 500px;
+}
+
+
+.social h1 {
+  font-size: 48px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  top: 70px;
+  right: 110px;
+  position: absolute;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.social .social-list {
+  list-style: none;
+  width: 400px;
+  float: right;
+  bottom: 20px;
+  right: 20px;
+  position: absolute;
+
+}
+
+.social-list .social-link {
+  display: inline-block;
+  width: 50px;
+  height: auto;
+  float: right;
+  cursor: pointer;
+}
+
+.social-link:nth-child(2n) {
+  right: 10px;
+}
+
+.social-link:nth-child(3n) {
+  right: 20px;
+}
+
+/* #myuniqhead ul li a {
+  color: ghostwhite;
+} */
+
