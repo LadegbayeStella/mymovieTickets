@@ -32,14 +32,15 @@ header{
   z-index: 1000;
   background: var(--main-color);
 }
- ul label img{
+  header ul label img{
   font-weight: 600;
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
   color: blueviolet;
-
 }
+/* mynavbar */
+
 
 .form-group {
   width: 300px;
