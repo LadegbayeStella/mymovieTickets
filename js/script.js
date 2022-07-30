@@ -61,12 +61,12 @@ Ticket.prototype.ticketPrice = function() {
 $(document).ready(function() {
   $("#movie-ticket").submit(function(event) {
     event.preventDefault();
-    const inputtedMovie = $('#movie-selection').val();
-    const inputtedShowtime = $('#showtime-selection').val();
-    const inputtedAge = $('#age-selection').val();
-    const intMovie = parseInt(inputtedMovie);
-    const intShowtime = parseInt(inputtedShowtime);
-    const intAge = parseInt(inputtedAge);
+    const intMovie = $('#movie-selection').val();
+    const intShowtime = $('#showtime-selection').val();
+    const intAge = $('#age-selection').val();
+    // const intMovie = inputtedMovie;
+    // const intShowtime = inputtedShowtime;
+    // const intAge = inputtedAge;
     let ticketRequest = new Ticket(intMovie, intShowtime, intAge);
     let price = ticketRequest.ticketPrice();
     $("#ticket-total").show();
