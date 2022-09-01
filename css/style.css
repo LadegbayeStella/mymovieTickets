@@ -7,6 +7,9 @@
   position: relative;
   color: ghost
 }
+body{
+  background-image: url(https://youtu.be/Q5f_lOtHZCI);
+}
 
 .container {
   background-position: center;
