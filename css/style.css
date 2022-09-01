@@ -480,10 +480,11 @@ button:hover {
 
 }
 
-@media(max-width:1060px) {
+@media(max-width:1190px) {
   .container {
     margin: auto;
-    width: 95%;
+    width: 75%;
+ 
   }
 }
 
@@ -493,3 +494,4 @@ button:hover {
     width: 95%;
   }
 }
+
