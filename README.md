@@ -20,7 +20,7 @@ _This is a website to check ticket prices based on information entered by the us
 
 ## Setup/Installation Requirements
 
-* _Go to https://github.com/Pingel88/movie-tickets_
+* _Go to https://github.com/mymovieTickets_
 * _Navigate to and click the green "Code" button on middle upper right part of webpage._
 * _Copy the HTTPs address to your clipboard._
 * _Open terminal or bash and navigate to the directory you wish to download the repo to._

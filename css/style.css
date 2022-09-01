@@ -8,9 +8,6 @@
   color: ghost
 }
 
-body {
-  background-image: url(https://youtu.be/Q5f_lOtHZCI);
-}
 
 .container {
   background-position: center;
@@ -21,8 +18,7 @@ body {
   position: relative;
   height: 60vh;
   background-size: cover;
-  /* object-position: 50% 50%;
-  object-fit: cover; */
+  
 }
 
 /* my header */
@@ -249,6 +245,13 @@ h2 {
   color: var(--Dark_grayish_blue);
 }
 
+
+ /* .span{
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(114, 17, 17), #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 #ticket-total {
   color: whitesmoke;
   display: none;
@@ -484,7 +487,7 @@ button:hover {
   .container {
     margin: auto;
     width: 75%;
- 
+
   }
 }
 
@@ -495,3 +498,9 @@ button:hover {
   }
 }
 
+#img1:hover {
+  width: 400px;
+  cursor: pointer;
+  height: 350px;
+  margin-top: 30px;
+}
