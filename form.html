@@ -29,8 +29,8 @@
             <label for="">-- lastName---</label>
             <input type="text" id="input2" class="form-control"> -->
 
-            <label for="">-- Email---</label>
-            <input type="text" id="input3" class="form-control" placeholder="ladegbayeewatomi50@gmail.com">
+            <label for="">-- Name---</label>
+            <input type="text" id="input3" class="form-control" placeholder="Ewatomi" required>
 
 
             <label class="my-2 mr-2" for="Movie-selection">Choose MovieType</label>
@@ -59,15 +59,30 @@
               <option value="1">Senior (65+)</option>
             </select><br><br>
 
+            <h2>Contacts:</h2>
+            <ul id="contacts">
             <button type="submit" class="btn btn-dark mybutton">Get price!</button>
         </form>
 
       </div>
     </div>
-    <div id="ticket-total" class="card">
+    <!-- <div id="ticket-total" class="card">
       <h2>YOUR TICKET INFORMATION:</h2>
       <p class="price">Your ticket cost is $<span id="cost"></span>.</p>
+      <p> </p>
       <p class="pricedescriptor">Enjoy your movies </p>
+    </div> -->
+
+
+    <div class="col-md-6">
+      <div id="show-Ticket">
+        <p>Name: <span class="name"></span></p>
+        <p>MovieType: <span class="movie"></span></p>
+        <p>showTime: <span class="time"></span></p>
+        <p>Age: <span class="age"></span></p>
+        <div id="buttons">
+        </div>
+      </div>
     </div>
   </div>
 </body>
