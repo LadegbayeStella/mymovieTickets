@@ -485,3 +485,6 @@ div{
   transition: box-shadow 0.15s ease-in-out; 
 }
 /* i want to hide the ticket */
+#show-Ticket{
+  display: none;
+}
