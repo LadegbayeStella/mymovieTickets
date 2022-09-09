@@ -7,6 +7,10 @@
   position: relative;
   color: ghost
 }
+/* i remove the scroll bar */
+body{
+overflow-x: hidden;
+}
 
 
 .container {
@@ -34,7 +38,7 @@ header {
   transition: 0.5s;
   z-index: 1000;
   background-color: black;
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 header ul label img {
@@ -59,6 +63,12 @@ header ul label img {
   cursor: white;
 }
 
+
+#img{
+  text-align: center;
+  justify-content: center;
+  width: 300px;
+}
 .navbar a:after {
   width: 100%;
   height: 2px;
@@ -418,13 +428,13 @@ button:hover {
   cursor: pointer;
 }
 
-.social-link:nth-child(2n) {
+/* .social-link:nth-child(2n) {
   right: 10px;
 }
 
 .social-link:nth-child(3n) {
   right: 20px;
-}
+} */
 
 .heading {
   max-width: 968px;
