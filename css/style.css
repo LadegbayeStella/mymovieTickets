@@ -34,6 +34,7 @@ header {
   transition: 0.5s;
   z-index: 1000;
   background-color: black;
+  opacity: 0.8;
 }
 
 header ul label img {
@@ -478,11 +479,15 @@ div{
 }
  #img:hover {
 
-  opacity: 1;
-  transition: width 5s;
+  /* opacity: 1; */
+  /* transition: width 5s; */
   cursor: pointer;
-  width: 350px;
-  transition: box-shadow 0.15s ease-in-out; 
+  /* width: 350px; */
+  transition: box-shadow 0.15s ease-out; 
+  transform: scale(1.1);
+  
+  
+
 }
 /* i want to hide the ticket */
 #show-Ticket{

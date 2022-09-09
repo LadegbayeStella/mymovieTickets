@@ -48,7 +48,7 @@ function attachCustomerListeners() {
     showCustomer(this.id);
   });
   $("#buttons").on("click", "button", function () {
-    addressBook.deleteCustomer(this.id);
+    cinemak.deleteCustomer(this.id);
     $("#show-Ticket").hide();
     displayCustomerDetails(cineama);
   });
