@@ -12,6 +12,7 @@ Cinema.prototype.addCustomer = function (customer) {
   customer.id = this.assignId();
   this.customers[customer.id] = customer;
 }
+// it will create method to find customer by their id
 Cinema.prototype.findCustomer = function (id) {
   if (this.customers[id] != undefined) {
     return this.customers[id];
