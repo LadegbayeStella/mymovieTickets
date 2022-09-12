@@ -63,7 +63,7 @@ header ul label img {
   cursor: red;
 }
 
-
+/* it will move all the images to the center */
 #img{
   text-align: center;
   justify-content: center;
