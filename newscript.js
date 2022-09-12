@@ -30,8 +30,10 @@ function customer(name, movieSection, age, showTime) {
   this.MovieSection = movieSection;
   this.Age = age;
   this.ShowTime = showTime;
-  this.TicketPrice = 35
+  this.TicketPrice = 35;
 }
+this.TicketPrice = ticketPrice(customer);
+
 
 
 function displayCustomerDetails(cinemaToDisplay) {
@@ -57,21 +59,19 @@ function attachCustomerListeners() {
   });
   $("#buttons").on("click", "button", function () {
     cinema.deleteCustomer(this.id);
-    // $("#show-Ticket").hide();
+    $("#show-Ticket").hide();
     displayCustomerDetails(cinema);
   });
 }
 
 function showCustomer(contactId) {
-  $(".price").empty();
   const customer = cinema.findCustomer(contactId);
-  ticketPrice(customer);
   $("#show-Ticket").show();
   $(".name").html(customer.Name);
   $(".movie").html(customer.MovieSection);
   $(".time").html(customer.ShowTime);
   $(".age").html(customer.Age);
-  $(".price").append(customer.TicketPrice);
+  $(".price").html("$" + customer.TicketPrice);
   let buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='btn btn-danger' id=" + + customer.id + ">Delete</button>");
@@ -95,6 +95,7 @@ $(document).ready(function () {
     $("#input3").val("");
 
     let newCustomer = new customer(inputttedName, inputtedMovie,  inputtedAge, inputtedtime);
+    ticketPrice(newCustomer);
     cinema.addCustomer(newCustomer);
     displayCustomerDetails(cinema);
   });
