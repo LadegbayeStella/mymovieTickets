@@ -264,9 +264,9 @@ h2 {
   font-family: fraunces, sans-serif;
   color:ghostwhite;
 }
-
-#ticket-total {
-  color: whitesmoke;
+/* design for the full information for the ticket */
+#show-Ticket {
+  color: ghostwhite;
   display: none;
   background-color: black;
   margin-top: 200px;
