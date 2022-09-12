@@ -2,11 +2,12 @@ function Cinema() {
   this.customers = {};
   this.currentId = 0;
 }
-// A method to assign id
+//  a method to assign id
 Cinema.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
 };
+//  it will create method to add customer by their id
 Cinema.prototype.addCustomer = function (customer) {
   customer.id = this.assignId();
   this.customers[customer.id] = customer;
