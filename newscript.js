@@ -19,7 +19,7 @@ Cinema.prototype.findCustomer = function (id) {
   }
   return false;
 };
-
+// it will create method to delete customer by their id
 Cinema.prototype.deleteCustomer = function (id) {
   if (this.customers[id] === undefined) {
     return false;
