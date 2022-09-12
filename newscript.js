@@ -66,7 +66,7 @@ if(customer.Age === "Child (0-12)"){
 }
 
 
-function attachCustomerListeners() {
+function attachEventListeners() {
   $("#Information").on("click", "li", function () {
     showCustomer(this.id);
   });
@@ -101,7 +101,7 @@ $(document).ready(function () {
     const inputtedAge = $("#age-selection").val();
     const inputttedName = $("#input3").val();
 
-    // The next three lines are new:
+    // The next three lines are empty the place after user input:
     $("#movie-selection").val("");
     $("showtime-selection").val("");
     $("#age-selection").val("");
