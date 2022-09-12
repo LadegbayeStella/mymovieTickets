@@ -56,11 +56,11 @@ header ul label img {
   list-style: none;
   position: relative;
 }
-
+/* it will change the anchor tag */
 .navbar a {
   font-size: 20px;
   font-weight: 800;
-  cursor: white;
+  cursor: red;
 }
 
 
@@ -76,13 +76,15 @@ header ul label img {
 
   
 }
+imgiframe
+
  /* design my iframe */
  iframe{
   width: 300px;
   height: 400px;
   display: grid;
-  margin-top: 5px;
-  display: none;
+  margin-top: 25px;
+  /* display: none; */
  }
 
 .navbar a:after {
