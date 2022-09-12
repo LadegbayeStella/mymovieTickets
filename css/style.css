@@ -132,7 +132,7 @@ body {
 .form-control select {
   text-align: center;
 }
-
+/* this will design the button and give it border radius */
 button {
   margin-bottom: 100px;
   padding-top: 100px;
