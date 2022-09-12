@@ -48,7 +48,7 @@ function displayCustomerDetails(cinemaToDisplay) {
   });
   customersList.html(htmlForCustomerInfo);
 }
-
+//  it will create a ticketPrice function
 function ticketPrice(customer){
 if (customer.Age === "Adult (18-64)") {
  customer.TicketPrice += 15;
