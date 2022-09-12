@@ -113,7 +113,7 @@ imgiframe
 .form-group {
   width: 300px;
 }
-
+/* it will design the label and change the color of label */
 .container form div label {
   color: whitesmoke;
   font-size: 27px;
