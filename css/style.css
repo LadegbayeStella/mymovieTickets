@@ -291,15 +291,6 @@ h2 {
   padding: 0.75em 0 0 0;
 }
 
-.pricedescriptor {
-  text-align: center;
-  color: rgb(118, 118, 118);
-  font-size: 20px;
-  padding: 0 0 1em 0;
-  font-weight: bolder;
-
-
-}
 
 button {
   margin-top: 1em;
@@ -321,7 +312,7 @@ button:hover {
 }
 
 
-/* footer */
+/* footer container */
 .container {
   width: 1366px;
   height: 500px;
@@ -339,11 +330,13 @@ button:hover {
   top: 820;
   background: linear-gradient(35deg, black 55%, grey 7%);
   background-color: ghostwhite;
-  box-shadow: #c20114;
-
 }
-
-
+/* design for the form label */
+label{
+  color: ghostwhite;
+  font-size: 25px;
+  font-weight: bolder;
+}
 
 .contact {
   height: 100%;
@@ -437,14 +430,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* .social-link:nth-child(2n) {
-  right: 10px;
-}
-
-.social-link:nth-child(3n) {
-  right: 20px;
-} */
-
 .heading {
   max-width: 968px;
   margin-left: auto;
@@ -473,8 +458,6 @@ button:hover {
     transform: translateY(0);
     border-top: 1px solid honeydew;
   }
-
-
 }
 
 @media(max-width:1190px) {
