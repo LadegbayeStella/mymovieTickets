@@ -8,59 +8,51 @@
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/jquery-3.6.0.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="./newscript.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <title>Document</title>
 </head>
 
 <body>
-  
   <div class="container">
     <h1 class="jumbotron">Movie Ticket Pricing</h1>
     <div class="row">
       <div class="col-md-4">
         <form id="movie-ticket">
           <div class="form-group"><br>
-
-
-            <!-- <label for="">-- firstName---</label>
-            <input type="text" id="input1" class="form-control">
-
-            <label for="">-- lastName---</label>
-            <input type="text" id="input2" class="form-control"> -->
-
+            <!-- input for name -->
             <label for="">-- Name---</label>
             <input type="text" id="input3" class="form-control" placeholder="Ewatomi" required>
 
-
+           <!-- input for movie selection -->
             <label class="my-2 mr-2" for="Movie-selection">Choose MovieType</label>
             <select class="custom-select" id="movie-selection">
               <option selected>Choose...</option>
-              <option value="4">Death Becomes Her</option>
-              <option value="3">Tree Stump: The Choppening</option>
-              <option value="2">Troll 2</option>
-              <option value="1">I Am Legend 2</option>
+              <option>Death Becomes Her</option>
+              <option>Tree Stump: The Choppening</option>
+              <option>Troll 2</option>
+              <option>I Am Legend 2</option>
             </select>
 
             <label class="my-2 mr-2" for="showtime-selection">Choose a showtime</label>
             <select class="custom-select" id="showtime-selection">
               <option selected>Choose...</option>
-              <option value="3">Prime Time</option>
-              <option value="2">Matinee</option>
-              <option value="1">Midnight</option>
+              <option>Prime Time</option>
+              <option>Matinee</option>
+              <option>Midnight</option>
             </select>
             <legend>movie</legend>
             <label class="my-2 mr-2" for="age-selection">Choose your age</label>
             <select class="custom-select" id="age-selection">
               <option selected>Choose...</option>
-              <option value="4">Adult (18-64)</option>
-              <option value="3">Teen (13-17)</option>
-              <option value="2">Child (0-12)</option>
-              <option value="1">Senior (65+)</option>
+              <option>Adult (18-64)</option>
+              <option>Teen (13-17)</option>
+              <option>Child (0-12)</option>
+              <option>Senior (65+)</option>
             </select><br><br>
 
             <h2>INFORMATION:</h2>
-            <ul id="Information">
+            <ul id="Information"></ul>
             <button type="submit" class="btn btn-dark mybutton">Get price!</button>
         </form>
 
@@ -80,6 +72,7 @@
         <p>MovieType: <span class="movie"></span></p>
         <p>showTime: <span class="time"></span></p>
         <p>Age: <span class="age"></span></p>
+        <p>Ticket-Price: <span class="price">$</span></p>
         <div id="buttons">
         </div>
       </div>

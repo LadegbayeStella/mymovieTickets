@@ -25,22 +25,30 @@ Cinema.prototype.deleteCustomer = function (id) {
   return true;
 };
 
-function MovieDetails(Name, movieSection, age, showTime) {
-  this.Name = Name;
-  this.movieSection = movieSection;
-  this.age = age;
-  this.showTime = showTime;
+function customer(name, movieSection, age, showTime) {
+  this.Name = name;
+  this.MovieSection = movieSection;
+  this.Age = age;
+  this.ShowTime = showTime;
+  this.TicketPrice = 35
 }
 
 
 function displayCustomerDetails(cinemaToDisplay) {
-  let customersList = $("ticket-total");
+  let customersList = $("#Information");
   let htmlForCustomerInfo = "";
   Object.keys(cinemaToDisplay.customers).forEach(function (key) {
     const customer = cinemaToDisplay.findCustomer(key);
-    htmlForCustomertInfo += "<li id=" + customer.id + ">" + customer.Name + " " + customer.movieSection + " " + customer.age + " " + customer.showTime +"</li>";
+    htmlForCustomerInfo += "<li id=" + customer.id + ">" + customer.Name  +"</li>";
   });
   customersList.html(htmlForCustomerInfo);
+}
+
+function ticketPrice(customer){
+if (customer.Age === "Adult (18-64)") {
+ customer.TicketPrice += 10;
+}
+
 }
 
 function attachCustomerListeners() {
@@ -48,32 +56,35 @@ function attachCustomerListeners() {
     showCustomer(this.id);
   });
   $("#buttons").on("click", "button", function () {
-    cinemak.deleteCustomer(this.id);
-    $("#show-Ticket").hide();
-    displayCustomerDetails(cineama);
+    cinema.deleteCustomer(this.id);
+    // $("#show-Ticket").hide();
+    displayCustomerDetails(cinema);
   });
 }
 
-function showContact(contactId) {
+function showCustomer(contactId) {
+  $(".price").empty();
   const customer = cinema.findCustomer(contactId);
+  ticketPrice(customer);
   $("#show-Ticket").show();
-  $(".name").html(customer.name);
-  $(".movie").html(customer.movie);
-  $(".time").html(customer.time);
-  $(".age").html(customer.age);
+  $(".name").html(customer.Name);
+  $(".movie").html(customer.MovieSection);
+  $(".time").html(customer.ShowTime);
+  $(".age").html(customer.Age);
+  $(".price").append(customer.TicketPrice);
   let buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='btn btn-danger' id=" + + customer.id + ">Delete</button>");
 }
 // User Interface Logic ---------
-let cineama = new Cinema();
+let cinema = new Cinema();
 
 $(document).ready(function () {
   attachCustomerListeners();
   $("#movie-ticket").submit(function (event) {
     event.preventDefault();
     const inputtedMovie = $("#movie-selection").val();
-    const inputtedtime = $("showtime-selection").val();
+    const inputtedtime = $("#showtime-selection").val();
     const inputtedAge = $("#age-selection").val();
     const inputttedName = $("#input3").val();
 
@@ -83,8 +94,8 @@ $(document).ready(function () {
     $("#age-selection").val("");
     $("#input3").val("");
 
-    let newCustomer = new customer(inputtedMovie, inputtedtime, inputtedAge, inputttedName);
-    cinema.addCustomert(newCustomer);
+    let newCustomer = new customer(inputttedName, inputtedMovie,  inputtedAge, inputtedtime);
+    cinema.addCustomer(newCustomer);
     displayCustomerDetails(cinema);
   });
 });
