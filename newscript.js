@@ -24,7 +24,7 @@ Cinema.prototype.deleteCustomer = function (id) {
   delete this.customers[id];
   return true;
 };
-
+// a constructor for customer
 function customer(name, movieSection, age, showTime) {
   this.Name = name;
   this.MovieSection = movieSection;
@@ -48,10 +48,20 @@ function displayCustomerDetails(cinemaToDisplay) {
 
 function ticketPrice(customer){
 if (customer.Age === "Adult (18-64)") {
- customer.TicketPrice += 10;
+ customer.TicketPrice += 15;
+}
+if(customer.Age === "Senior (65+)"){
+  customer.TicketPrice += 20;
+}
+if(customer.Age === "Teen (13-17)"){
+  customer.TicketPrice += 10;
 }
 
+if(customer.Age === "Child (0-12)"){
+  customer.TicketPrice += 5;
 }
+}
+
 
 function attachCustomerListeners() {
   $("#Information").on("click", "li", function () {
