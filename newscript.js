@@ -7,19 +7,19 @@ Cinema.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
 };
-//  it will create method to add customer by their id
+//  it will create  a method to add customer by their id
 Cinema.prototype.addCustomer = function (customer) {
   customer.id = this.assignId();
   this.customers[customer.id] = customer;
 }
-// it will create method to find customer by their id
+// it will create  a method to find customer by their id
 Cinema.prototype.findCustomer = function (id) {
   if (this.customers[id] != undefined) {
     return this.customers[id];
   }
   return false;
 };
-// it will create method to delete customer by their id
+// it will  create a method to delete customer by their id 
 Cinema.prototype.deleteCustomer = function (id) {
   if (this.customers[id] === undefined) {
     return false;
@@ -38,7 +38,7 @@ function customer(name, movieSection, age, showTime) {
 this.TicketPrice = ticketPrice(customer);
 
 
-
+// it will create method to display Customer Details
 function displayCustomerDetails(cinemaToDisplay) {
   let customersList = $("#Information");
   let htmlForCustomerInfo = "";
