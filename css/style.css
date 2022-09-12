@@ -118,12 +118,16 @@ header ul label img {
   font-weight: bolder;
 }
 
-/* it will give it a perfect height and also change the background color */
-body {
+/* it will give it a perfect height and also change the background color for the home page */
+#body1{
   min-height: 75rem;
   padding-top: 4.5rem;
   background: linear-gradient(45deg, black 50%, rgb(68, 32, 32) 50%); 
 
+}
+/* background color for the form */
+body{
+  background-color: black;
 }
 /* this will align the select text */
 .form-control select {
@@ -249,10 +253,15 @@ a {
 }
 
 .containerform{
-  width: 100%;
+  width: 85%;
   background-color: transparent;
-  background-color:black;
+  background-color:grey;
   opacity: 0.9;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+margin: 50px;
+margin-left: 200px;
 }
 
 .form-group {
@@ -308,9 +317,7 @@ button:hover {
   transition: box-shadow 0.15s ease-in-out;
   transition: width 2s, height 4s;
   transition-timing-function: ease;
-
 }
-
 
 /* footer container */
 .container {
