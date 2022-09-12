@@ -87,15 +87,15 @@ imgiframe
   /* display: none; */
  }
 
-.navbar a:after {
+/* .navbar a:after {
   width: 100%;
   height: 2px;
   position: absolute;
   bottom: -4px;
   left: 0;
   transition: 0.4s all linear;
- }
-/* my button */
+ } */
+/*  it will design my sign in  button */
 .btn {
   padding: 9px 20px;
   background: #c20114;
