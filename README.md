@@ -20,7 +20,11 @@ _This is a website to check ticket prices based on information entered by the us
 
 ## Setup/Installation Requirements
 
+<<<<<<< HEAD
 * _Go to https://github.com/mymovieTickets_
+=======
+* _Go to https://github.com/LadegbayeStella/mymovieTickets_
+>>>>>>> f059d74dda46da39cfebddd40f238ed21668fa2d
 * _Navigate to and click the green "Code" button on middle upper right part of webpage._
 * _Copy the HTTPs address to your clipboard._
 * _Open terminal or bash and navigate to the directory you wish to download the repo to._
