@@ -73,20 +73,6 @@ header ul label img {
   margin: 30px;
 }
 
-#imgiframe{
-  width: 300px;
-  margin-top: 35px;
-}
-
- /* design my iframe */
- iframe{
-  width: 300px;
-  height: 450px;
-  display: grid;
-  margin-top: 25px;
-  /* display: none; */
- }
-
 /*  it will design my sign in  button */
 .btn {
   padding: 9px 20px;
@@ -127,7 +113,11 @@ header ul label img {
 }
 /* background color for the form */
 body{
-  background-color: black;
+   background-color: black; 
+  background-image: url(../img/4c403c3551a219310d882089af03c2a9.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 }
 /* this will align the select text */
 .form-control select {
@@ -159,6 +149,9 @@ span {
   color: whitesmoke;
   float: 34px;
 }
+/* #demo img{
+  width: 100%;
+} */
 
 a:hover {
   color: ghostwhite;
@@ -243,25 +236,34 @@ a {
 
 /*  this will design  my myform */
 .jumbotron {
- /* / background: linear-gradient(lightblue, black); */
   height: 70px;
   width: 100%;
   text-align: center;
   font-size: 50px;
   font-display: 30px;
-  position: absolute;
+  position: fixed;
+}
+marquee .tron {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  color: ghostwhite;
+  text-align: center;
+  margin-top: 10px;
+  align-items: center;
 }
 
 .containerform{
-  width: 85%;
+  width: 80%;
+  height: 70%;
   background-color: transparent;
   background-color:grey;
   opacity: 0.9;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 90px;
+  margin: 120px;
   padding: 58px;
+  margin-bottom: 40px;
 }
 
 .form-group {
@@ -280,10 +282,18 @@ h2 {
   background-color:black;
   border: solid ghostwhite 44px;
   margin-top: 200px;
-  margin-left: 350px;
+  float: right;
+  margin-left: 250px;
   font-size: 15px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+}
+li{
+  color: black;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  list-style: none;
 }
 /* this will align the words inside the ticket  */
 #show-Ticket p{
@@ -343,6 +353,13 @@ label{
   color: ghostwhite;
   font-size: 25px;
   font-weight: bolder;
+}
+/* it will change the color  of the text in span with id bracket to red */
+#bracket{
+  color: #c20114;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 4opx;
 }
 
 .contact {
@@ -421,8 +438,10 @@ label{
   display: inline-block;
   width: 50px;
   height: auto;
+  cursor: pointer;  
   float: right;
-  cursor: pointer;
+
+
 }
 
 .heading {
@@ -435,10 +454,10 @@ label{
   margin-bottom: 300px;
 }
 
-/* my img container */
+/* my img container
 #myContainer.row .col-md-4 img:hover {
   background-clip: border-box;
-}
+}  */
 
 @media(max-width:1170px) {
   .navbar {
@@ -472,15 +491,16 @@ label{
 div{
   display: inline-block;
   text-align-last: center;
+  backdrop-filter: blur(15px);
 }
  #img:hover {
-
-  /* opacity: 1; */
-  /* transition: width 5s; */
   cursor: pointer;
-  /* width: 350px; */
-  transition: box-shadow 0.15s ease-out; 
-  transform: scale(1.1);
+  width: 280px;
+   transition: box-shadow 15s ease-out; 
+  transform: scale(1.1 );
+  /* border: 30px solid burlywood; */
+  box-shadow: rgb(239, 239, 239 ,2px,7px) ;
+  transform: translatey(-6px) rotate(5deg);
   
   
 

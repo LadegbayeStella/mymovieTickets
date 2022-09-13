@@ -93,7 +93,7 @@ function showCustomer(contactId) {
 let cinema = new Cinema();
 
 $(document).ready(function () {
-  attachCustomerListeners();
+  attachEventListeners();
   $("#movie-ticket").submit(function (event) {
     event.preventDefault();
     const inputtedMovie = $("#movie-selection").val();
