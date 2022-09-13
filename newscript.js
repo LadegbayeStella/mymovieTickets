@@ -35,7 +35,6 @@ function customer(name, movieSection, age, showTime) {
   this.ShowTime = showTime;
   this.TicketPrice = 35;
 }
-this.TicketPrice = ticketPrice(customer);
 
 
 // it will create method to display Customer Details
