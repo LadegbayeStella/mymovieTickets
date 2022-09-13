@@ -46,7 +46,7 @@ Expect: (ticketPrice(movieTicket)).toEqual(9)
 
 _MIT_
 
-Copyright &copy; 2021 **_ladegbaye stella_** 
+Copyright &copy; 2022 **_ladegbaye stella_** 
 ## Contact Information
 
 ### ladegbay stella
